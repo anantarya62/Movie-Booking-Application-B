@@ -1,0 +1,29 @@
+.column1 {
+    float: left;
+    width: 20%;
+    padding-left: 24px;
+  }
+  .column2 {
+    float: left;
+    width: 60%;
+  }
+.bold{
+    font-weight: bold;
+}
+.trailer{
+    margin-top: 16px;
+}
+.yellow {
+  color: yellow;
+  cursor: pointer;
+}
+.black {
+  color: none;
+  cursor: pointer;
+}
+.marginBottom16{
+  margin-bottom: 16px;
+}
+.marginTop16{
+  margin-top: 16px;
+}

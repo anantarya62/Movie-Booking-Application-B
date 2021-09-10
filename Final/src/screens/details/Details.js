@@ -1,4 +1,4 @@
-import { Button, CardContent } from '@material-ui/core';
+import { Button } from '@material-ui/core';
 import React, { Component } from 'react';
 import Header from '../../common/header/Header';
 import moviesData from '../../common/moviesData';
@@ -6,8 +6,6 @@ import ReactDOM from 'react-dom';
 import Home from '../home/Home';
 import { Typography } from "@material-ui/core";
 import "./Details.css";
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
 import YouTube from 'react-youtube';
 import StarBorderIcon from '@material-ui/icons/StarBorder';
 import GridList from '@material-ui/core/GridList';

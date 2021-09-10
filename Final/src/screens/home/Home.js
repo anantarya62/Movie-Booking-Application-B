@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Header from "../../common/header/Header";
 import "./Home.css";
 import ReactDOM from 'react-dom';
 import { withStyles } from '@material-ui/core/styles';
@@ -61,10 +60,66 @@ class Home extends Component {
         super();
         this.state = {
             movieName: "",
+            upcomingMovies: [],
+            releasedMovies: [],
             genres: [],
-            artists: []
+            artists: [],
+            genresList: [],
+            artistsList: [],
+            releaseDateStart: "",
+            releaseDateEnd: "",
+
         }
     }
+    componentWillMount() {
+        // Get upcoming movies
+    
+        fetch(
+          "http://localhost:8085/api/v1/movies?page=1&limit=10&status=published",
+          { method: "GET" }
+        )
+          .then((response) => response.json())
+          .then((data) => {
+            this.setState({
+              upcomingMovies: data.movies,
+            });
+          });
+    
+        // Get released movies
+    
+        fetch(
+          "http://localhost:8085/api/v1/movies?page=1&limit=10&status=Released",
+          { method: "GET" }
+        )
+          .then((response) => response.json())
+          .then((data) => {
+            this.setState({
+              releasedMovies: data.movies,
+            });
+          });
+    
+        // Get filters
+    
+        fetch("http://localhost:8085/api/v1/genres", { method: "GET" })
+          .then((response) => response.json())
+          .then((data) => {
+            this.setState({
+              genresList: data.genres,
+            });
+          });
+    
+        // Get artists
+    
+        fetch("http://localhost:8085/api/v1/artists?page=1&limit=10", {
+          method: "GET",
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            this.setState({
+              artistsList: data.artists,
+            });
+          });
+      }
 
     genreSelectHandler = event => {
         this.setState({ genres: event.target.value });
@@ -83,7 +138,6 @@ class Home extends Component {
         const { classes } = this.props;
         return (
             <div>
-               <Header/>
                <div>
                <div className={classes.upcomingMoviesHeading}>
                     <span>Upcoming Movies</span>

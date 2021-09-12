@@ -1,33 +1,3 @@
-Skip to content
-Search or jump to…
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@anantarya62 
-ratikanta217
-/
-Movie-app-part-B
-Public
-1
-00
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-Movie-app-part-B/Movie-booking-partB/src/screens/bookshow/BookShow.js /
-@ratikanta217
-ratikanta217 Checkpoint 5
-Latest commit 063264e on Jun 21
- History
- 1 contributor
-186 lines (171 sloc)  8.7 KB
-  
 import React, { Component } from 'react';
 import Header from '../../common/header/Header';
 import Typography from '@material-ui/core/Typography';
